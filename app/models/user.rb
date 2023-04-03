@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :entrance_logs
+
   validates :username, presence: true, uniqueness: true
 
   before_create do
@@ -8,6 +10,10 @@ class User < ApplicationRecord
     self.slack_user_id = slack_user[:user][:id]
   rescue Slack::Web::Api::Errors::UsersNotFound
     puts "user not found; #{email}"
+  end
+
+  def enterd?
+    !!EntranceLog.latest_enter_log(user: self)
   end
 
   private

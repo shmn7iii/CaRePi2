@@ -8,3 +8,10 @@ create_table :users do |t|
   t.index :username, unique: true
 end
 
+create_table :entrance_logs do |t|
+  t.references :user, null: false, unsigned: true, foreign_key: { to_table: :users }
+  t.datetime :entered_at, null: true
+  t.datetime :exited_at, null: true
+
+  t.timestamps
+end
