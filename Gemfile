@@ -9,6 +9,7 @@ gem 'bootsnap', require: false
 gem 'importmap-rails'
 gem 'jbuilder'
 gem 'puma', '~> 5.0'
+gem 'ridgepole'
 gem 'rubocop'
 gem 'rubocop-rails'
 gem 'sprockets-rails'
