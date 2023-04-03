@@ -1,0 +1,13 @@
+services:
+  rails:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && ./bin/setup && bundle exec rails s -e production -p 3000 -b '0.0.0.0'"
+    restart: always
+    env_file:
+      - .env
+    environment:
+      RAILS_ENV: production
+    volumes:
+      - .:/carepi2
+    ports:
+      - "3000:3000"
