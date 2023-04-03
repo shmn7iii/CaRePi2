@@ -1,0 +1,10 @@
+create_table :users do |t|
+  t.string :username, null: false
+  t.string :email, null: false
+  t.string :slack_user_id, null: true
+
+  t.timestamps
+
+  t.index :username, unique: true
+end
+
