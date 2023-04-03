@@ -8,6 +8,7 @@ class EntranceLog < ApplicationRecord
   def self.exit!(user:)
     log = latest_enter_log(user:) || create(user:)
     log.update!(exited_at: Time.current)
+    log
   end
 
   def self.latest_enter_log(user:)

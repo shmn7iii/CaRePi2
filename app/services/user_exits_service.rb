@@ -6,8 +6,10 @@ class UserExitsService < BaseUserEntranceService
   end
 
   def execute!
-    EntranceLog.exit!(user: @user)
+    log = EntranceLog.exit!(user: @user)
     send_slack_notification(blocks: message_blocks)
+
+    log
   end
 
   private
