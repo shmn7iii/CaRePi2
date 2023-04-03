@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  namespace :admin do
+    resources :users, only: %i[index show edit update destroy]
+    resources :entrance_logs, only: %i[index show edit update destroy]
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+    root to: 'users#index'
+  end
   get '/slack/invite', to: 'slack#invite'
 end

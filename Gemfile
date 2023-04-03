@@ -5,6 +5,7 @@ ruby '3.1.3'
 
 gem 'rails', '~> 7.0.4', '>= 7.0.4.3'
 
+gem 'administrate'
 gem 'bootsnap', require: false
 gem 'dotenv-rails'
 gem 'importmap-rails'
