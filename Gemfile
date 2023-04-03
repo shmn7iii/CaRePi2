@@ -8,6 +8,7 @@ gem 'rails', '~> 7.0.4', '>= 7.0.4.3'
 gem 'administrate'
 gem 'bootsnap', require: false
 gem 'dotenv-rails'
+gem 'graphql'
 gem 'importmap-rails'
 gem 'jbuilder'
 gem 'puma', '~> 5.0'
@@ -25,6 +26,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'graphiql-rails'
   gem 'rubocop'
   gem 'rubocop-rails'
   gem 'web-console'
